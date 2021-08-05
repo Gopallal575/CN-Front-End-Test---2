@@ -48,23 +48,27 @@ function loadMovies(text) {
           favbtn.addEventListener('click',function(e){
               console.log("Favourite");
             e.stopImmediatePropagation();
-            if(favourites.includes(i.imdbID)) return;
-            favourites.push(i.imdbID);
-            let fav_m = document.createElement("div");
-            let obj = opt.cloneNode(true);
-            obj.removeChild(obj.lastChild);
-            fav_m.appendChild(obj);
-            fav_m.id = i.imdbID;
-            let delBtn = document.createElement("button");
-            delBtn.classList.add("glow-on-hover")
-            delBtn.innerText="Remove";
-            delBtn.addEventListener("click", function(e){
-                console.log("delete");
-                e.stopImmediatePropagation();
-                document.getElementById(fav_m.id).remove();
-            })
-            obj.appendChild(delBtn);
-            fav_list.appendChild(fav_m);
+            if(favourites.includes(i.imdbID)){
+              return;
+            }else{
+              favourites.push(i.imdbID);
+              let fav_m = document.createElement("div");
+              let obj = opt.cloneNode(true);
+              obj.removeChild(obj.lastChild);
+              fav_m.appendChild(obj);
+              fav_m.id = i.imdbID;
+              let delBtn = document.createElement("button");
+              delBtn.classList.add("glow-on-hover")
+              delBtn.innerText="Remove";
+              delBtn.addEventListener("click", function(e){
+                  console.log("delete");
+                  e.stopImmediatePropagation();
+                  document.getElementById(fav_m.id).remove();
+              })
+              obj.appendChild(delBtn);
+              fav_list.appendChild(fav_m);
+            }
+            
           });
           opt.appendChild(favbtn); 
           search_list.appendChild(opt);
