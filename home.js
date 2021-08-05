@@ -20,7 +20,7 @@ function movie_opener(id){
 function loadMovies(text) {
   const Xhttp = new XMLHttpRequest();
   
-  let url = 'http://www.omdbapi.com/?apikey=b505ec97&s=' + text;
+  let url = 'https://www.omdbapi.com/?apikey=b505ec97&s=' + text;
   console.log(url);
   Xhttp.open("GET", url);
   Xhttp.send();
