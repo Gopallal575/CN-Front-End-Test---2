@@ -48,6 +48,7 @@ function loadMovies(text) {
           favbtn.addEventListener('click',function(e){
               console.log("Favourite");
             e.stopImmediatePropagation();
+            if(favourites.includes(i.imdbID)) return;
             favourites.push(i.imdbID);
             let fav_m = document.createElement("div");
             let obj = opt.cloneNode(true);

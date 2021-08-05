@@ -3,7 +3,7 @@ var id = window.location.search.split('?')[1];
 function loadMovie(id) {
     const Xhttp = new XMLHttpRequest();
     
-    let url = 'http://www.omdbapi.com/?apikey=b505ec97&i=' + id;
+    let url = 'https://www.omdbapi.com/?apikey=b505ec97&i=' + id;
     console.log(url);
     Xhttp.open("GET", url);
     Xhttp.send();
